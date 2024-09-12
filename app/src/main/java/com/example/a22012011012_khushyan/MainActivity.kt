@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         showMessage("onCreate Function is Called")
-
     }
     private fun showMessage(msg : String){
         Log.i(TAG, msg)
