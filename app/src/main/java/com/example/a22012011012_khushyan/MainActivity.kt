@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
@@ -21,11 +22,20 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val text=findViewById<TextView>(R.id.text_hello)
+        showMessage("onCreate Function is Called")
+
     }
-    fun showMessage(msg : String){
+    private fun showMessage(msg : String){
         Log.i(TAG, msg)
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+    private fun showToastMessage(message: String) {
+        Log.i(TAG, message)
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+    private fun showSnackbarmsg(msg: String){
+        Log.i(TAG, msg)
+        Snackbar.make(findViewById(R.id.main), msg, Snackbar.LENGTH_SHORT).show()
     }
 
     override fun onStart() {
@@ -40,21 +50,22 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        showMessage("onStop Is Called")
+        showToastMessage("onStop Is Called")
     }
 
     override fun onResume() {
         super.onResume()
-        showMessage("onResume Is Called")
+        showToastMessage("onResume Is Called")
     }
 
     override fun onRestart() {
         super.onRestart()
-        showMessage("onRestart Is Called")
+        showSnackbarmsg("onRestart Is Called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        showMessage("onDestroy Is Called")
+        showToastMessage("onDestroy Is Called")
     }
+
 }
