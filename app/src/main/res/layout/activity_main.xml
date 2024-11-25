@@ -11,15 +11,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#E7E7E7"
         android:text="Hello World!"
-        android:textColor="@color/white"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        android:background="#0C1338"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.459" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
